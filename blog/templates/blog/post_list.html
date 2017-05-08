@@ -1,11 +1,32 @@
 <html>
+
     <head>
+
         <title>BlogCentral</title>
+
     </head>
+
     <body>
+
         <h1>BlogCentral</h1>
+
         <p>Conversation Creates Harmony</p>
+
+        {% for post in posts %}
+            <div>
+                
+                <p>published: {{ post.published_date }}</p>
+
+                <h1><a href="">{{ post.title }}</a></h1>
+
+                <p>{{ post.text|linebreaksbr }}</p>
+
+            <div>
+
+        {% endfor %}
+
     </body>
+
 </html>
 
 
