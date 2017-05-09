@@ -1,36 +1,14 @@
-<html>
+{% extends 'blog/base.html' %}
 
-    <head>
-
-        <title>BlogCentral</title>
-
-    </head>
-
-    <body>
-
-        <h1>BlogCentral</h1>
-
-        <p>Conversation Creates Harmony</p>
-
-        {% for post in posts %}
-            <div>
-                
-                <p>published: {{ post.published_date }}</p>
-
-                <h1><a href="">{{ post.title }}</a></h1>
-
-                <p>{{ post.text|linebreaksbr }}</p>
-
-            <div>
-
-        {% endfor %}
-
-    </body>
-
-</html>
-
-
-
-
-
+{% block content %}
+    {% for post in posts|slice:":5" %}
+		<div class="post">
+			<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+		        <p>{{ post.text|linebreaksbr }}</p>
+			<div class="date">
+		        	<p>{{ post.published_date }} | author: {{ post.author}}</p>
+		        </div>
+		</div>
+	{% endfor %}
+{% endblock %}
 
