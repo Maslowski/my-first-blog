@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.text|linebreaksbr }}</p>
+    {% if user.is_authenticated %}
+        <h1>Remove Post?</h1>
+        <p>Are you sure you want to delete your post?</p>
+        <a class="btn btn-danger" href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+        <a class="btn btn-default" href="{% url 'post_list' %}">Cancel</a>
+    {% else %}
+        <h1>Not Authorized!</h1>
+    {% endif %}
+    <p></p>
+{% endblock %}

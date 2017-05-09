@@ -16,7 +16,7 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Dosis', sans-serif;k
+    font-family: 'Dosis', sans-serif;
 }
 
 .date {
@@ -32,12 +32,18 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #gggggg;
+    color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 20pt;
     margin-right: 20px;
+    font-family: 'Dosis', sans-serif;
 }
 
+#logout {
+    color: #ffffff;    
+    font-size: 13pt;
+    font-family: 'Dosis', sans-serif;
+}
 .post {
     margin-bottom: 70px;
 }
